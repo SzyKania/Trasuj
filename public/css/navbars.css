@@ -1,0 +1,95 @@
+.sidenav {
+    height: 100vh;
+    width: 15vw;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: transparent linear-gradient(136deg, #70FF70 0%, #FF4040 100%);
+    overflow-x: hidden;
+}
+
+.sidelogo {
+    width: 75%;   
+}
+
+.sidelogobox {
+    height: 15%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.sidebuttons {
+    padding-top: 10%;
+    height: 85%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10%;
+    padding-bottom: 10%;
+    padding-top: 40%;
+    box-sizing: border-box;
+}
+
+.settingsbutton {
+    margin-top: auto;
+    justify-self: flex-end;
+}
+
+.sidenav a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #000000;
+    text-align: center;
+  }
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.topnav {
+    width: 85vw;
+    height: 15vh;
+    top: 0;
+    left: 15vw;
+    position: fixed;
+    z-index: 1;
+    
+    border: #717171;
+    border-bottom-style: solid;
+    box-sizing: border-box;
+    display: flex;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchbar {
+    width: 50%;
+    height: 4rem;
+    border-radius: 18px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+.routesbutton {
+    background: linear-gradient(136deg, #B3F5B3 0%, #F5B2B2 100%);
+    width: 28%;
+    height: 4rem;
+    border-radius: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+.main {
+    margin-left: 15vw;
+    padding: 0px 10px;
+}

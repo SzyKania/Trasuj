@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="578" height="218" viewBox="0 0 578 218">
+  <defs>
+    <filter id="TRASUJ" x="0" y="0" width="578" height="218" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#TRASUJ)">
+    <text id="TRASUJ-2" data-name="TRASUJ" transform="translate(289 168)" fill="#fff" font-size="150" font-family="SegoeUI-Bold, Segoe UI" letter-spacing="0.015em" font-weight="700"><tspan x="-279.587" y="0">TRASUJ</tspan></text>
+  </g>
+</svg>
