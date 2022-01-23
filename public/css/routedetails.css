@@ -1,0 +1,123 @@
+.maincontent{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.routeinfo{
+    display: flex;
+    flex-direction: row;
+    height: 22%;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.routeinfo > div{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.routeinfo p{
+    margin: 10px;
+}
+
+.mapbutton {
+    font-size: 1em;
+    padding: 2%;
+    font-family: 'Montserrat', sans-serif;
+    background: transparent linear-gradient(136deg, #70FF70 0%, #FF4040 100%);
+    border-radius: 20px;
+    border-style: none;
+}
+
+.reviewsandgallery {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding-top: 2%;
+    height: 80%;
+}
+
+.reviewsandgallery > div{
+    flex-grow: 1;
+    padding-left: 5%;
+    padding-right: 5%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: scroll;    
+    min-height: 10vh;
+    row-gap: 3em;
+}
+
+.review {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    box-shadow: 4px 4px 15px rgb(202, 202, 202);
+}
+
+.reviewerphoto {
+    padding-left: 2%;
+    padding-top: 2%;
+    margin-right: 10%;
+}
+
+.photo {
+    border-radius: 50%;
+}
+
+.reviewinfo {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.reviewinfo > div {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.reviewdata {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.reviewername {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+}
+
+.reviewername > p {
+    margin: 0;
+}
+
+.metadata {
+    display: flex;
+    flex-direction: row;
+}
+
+.metadata p {
+    margin-bottom: 0;
+}
+
+.metadata > .rating {
+    margin-right: 1%;
+}
+
+.reviewtext {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    padding: 2%;
+}

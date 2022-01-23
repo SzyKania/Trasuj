@@ -1,0 +1,53 @@
+.content-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    padding: 10%;
+    padding-top: 5%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    
+}
+
+.content-item {
+    background-color: white;
+    display: flex;
+    min-height: 30vh;
+    justify-content: flex-end;
+    flex-direction: row;
+    font-size: 30px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 15px rgb(202, 202, 202);
+}
+
+.picture-box {
+    aspect-ratio: 1;
+    height: 100%;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.text-box {
+    flex-grow: 1;
+    border-right: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#miasto {
+    margin-left: -5%;
+}
+
+.shareicon {
+    height: 100%;
+    width: 5%;
+    padding: 0% 1% 1% 1%;
+    z-index: 1;
+    display: flex; 
+    align-items: flex-end;   
+    box-sizing: border-box;
+}

@@ -1,0 +1,78 @@
+.grid-box {
+    width: auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10%;
+    padding: 10%;
+    padding-top: 5%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    font-size: 30px;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 15px rgb(202, 202, 202);
+}
+
+.picture-box {
+    aspect-ratio: 1;
+    background-color: #ebebeb;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.description-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: stretch;
+    box-sizing: border-box;
+    background: linear-gradient(136deg, #70FF70 0%, #FF4040 100%);
+}
+
+.description-box > div {
+    box-sizing: border-box;
+    flex: 1;
+    text-align: center;
+}
+
+.description-box > .citydata{
+    display: flex;
+    flex-direction: column;
+}
+
+.citydata > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.rating > p {
+    vertical-align: middle;
+}
+
+.addbutton {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 5vw;
+    height: 5vw;
+    font-size: 2em;
+    z-index: 1;
+    margin: 3%;
+    border-radius: 50%;
+    border-style: none;
+    color: white;
+    background: transparent linear-gradient(136deg, #70FF70 0%, #FF4040 100%);
+}
