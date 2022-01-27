@@ -1,0 +1,160 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.infoandroutes{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90%;
+    box-sizing: border-box;
+}
+
+.info {
+    margin-top: 10%;
+    width: 30%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.info p {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+}
+
+.imgcontainer{
+    width: 50%;
+    height: auto;
+}
+
+.info img{
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 100%;
+    height: auto;
+}
+
+.routes {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.routestitle {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    width: 100%;
+    height: 20%;
+}
+
+.routestitle p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+}
+
+.routecontainer {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y: scroll;
+}
+
+.routeobject {
+    font-size: 30px;
+    height: 38vh;
+    width: 30vh;
+    box-shadow: 4px 4px 15px rgb(202, 202, 202);
+    margin-bottom: 7%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.picture-box {
+    aspect-ratio: 1;
+    background-color: #ebebeb;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.description-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: stretch;
+    box-sizing: border-box;
+    background: linear-gradient(136deg, #70FF70 0%, #FF4040 100%);
+}
+
+.description-box > div {
+    box-sizing: border-box;
+    flex: 1;
+    text-align: center;
+}
+
+.description-box > .citydata{
+    display: flex;
+    flex-direction: column;
+}
+
+.citydata > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+
+.friends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.friendscontainer {
+    width: 100%;
+}
+
+.friendstitle p {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+}
+
+.friendobject {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+} 
+
+.friendinfo {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.friendinfo p {
+    justify-self: center;
+}

@@ -2,8 +2,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../css/navbars.css">
     <link rel="stylesheet" type="text/css" href="../css/favourites.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>FAVOURITES PAGE</title>
 </head>
@@ -16,9 +14,9 @@
         <div class="sidebuttons">
             <a href="browse.php">BROWSE</a>
             <a href="#" id="current">FAVOURITES</a>
-            <a href="#">HISTORY</a>
-            <a href="#">USERS</a>
-            <a href="#">FRIENDS</a>
+            <!-- <a href="#">HISTORY</a> -->
+            <a href="users.php">USERS</a>
+            <a href="friends.php">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>
         </div>
     </div>

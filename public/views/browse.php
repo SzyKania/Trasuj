@@ -2,8 +2,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../css/navbars.css">
     <link rel="stylesheet" type="text/css" href="../css/browse.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>BROWSING PAGE</title>
 </head>
@@ -16,9 +14,9 @@
         <div class="sidebuttons">
             <a href="#" id="current">BROWSE</a>
             <a href="favourites.php">FAVOURITES</a>
-            <a href="#">HISTORY</a>
-            <a href="#">USERS</a>
-            <a href="#">FRIENDS</a>
+            <!-- <a href="#">HISTORY</a> -->
+            <a href="users.php">USERS</a>
+            <a href="friends.php">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>
         </div>
     </div>
@@ -29,7 +27,7 @@
     <button class="addbutton" href="#">+</button>
     <div class="main">
         <div class="grid-box">
-            <div class="grid-item">
+            <div class="grid-item" role="button" onclick="location.href='routedetails.php'">
                 <div class="picture-box"> 1c</div>
                 <div class="description-box">
                     <div class="citydata">

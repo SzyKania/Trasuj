@@ -14,9 +14,9 @@
         <div class="sidebuttons">
             <a href="browse.php" id="current">BROWSE</a>
             <a href="favourites.php">FAVOURITES</a>
-            <a href="#">HISTORY</a>
-            <a href="#">USERS</a>
-            <a href="#">FRIENDS</a>
+            <!-- <a href="#">HISTORY</a> -->
+            <a href="users.php">USERS</a>
+            <a href="friends.php">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>
         </div>
     </div>
@@ -137,10 +137,16 @@
                 <div class="gallery">
                     <div class="picture">
                         <img src="../img/dynia.png">
-                    </div>
-                    <div class="gallerybuttons">
+                        <button class="arrowbutton" id="right">
+                            <i class="arrow right"></i>
+                        </button>
+                        <button class="arrowbutton" id="left">
+                            <i class="arrow left"></i>
+                        </button>
+                        <div class="gallerybuttons">
                         <button class="gallerybutton">ADD PHOTOS</button>
                         <button class="gallerybutton">ADD REVIEW</button>
+                    </div>
                     </div>
                 </div>
             </div>

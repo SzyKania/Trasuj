@@ -1,0 +1,36 @@
+.grid-box {
+    width: auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10%;
+    padding: 5%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.picture-box .photo {
+    aspect-ratio: 1;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+ 
+.photo {
+    border-radius: 50%;
+}
+
+.description-box {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 5%;
+    row-gap: 10px;
+}
+
+.description-box p {
+    text-align: center;
+    margin: 0;
+    font-size: 1.5em;
+}

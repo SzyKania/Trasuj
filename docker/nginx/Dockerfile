@@ -1,7 +1,5 @@
 FROM nginx:1.17.8-alpine
 
-# verify modified configuration
-RUN dpkg-reconfigure --frontend noninteractive locales
 # Copy the public directory
 # COPY ./public/ /app/public/
 COPY . /app/

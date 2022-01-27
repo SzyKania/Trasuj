@@ -5,6 +5,7 @@
     z-index: 1;
     top: 0;
     left: 0;
+    box-sizing: border-box;
     background: transparent linear-gradient(136deg, #70FF70 0%, #FF4040 100%);
     overflow-x: hidden;
 }
