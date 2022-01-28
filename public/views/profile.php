@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/navbars.css">
-    <link rel="stylesheet" type="text/css" href="../css/profile.css">
+    <link rel="stylesheet" type="text/css" href="public/css/navbars.css">
+    <link rel="stylesheet" type="text/css" href="public/css/profile.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>ROUTE DETAILS</title>
 </head>
@@ -9,14 +9,14 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="../img/logo.svg">
+            <img class="sidelogo" src="public/img/logo.svg">
         </div>
         <div class="sidebuttons">
-            <a href="browse.php">BROWSE</a>
-            <a href="favourites.php">FAVOURITES</a>
+            <a href="browse">BROWSE</a>
+            <a href="favourites">FAVOURITES</a>
             <!-- <a href="#">HISTORY</a> -->
-            <a href="users.php" id="current">USERS</a>
-            <a href="friends.php">FRIENDS</a>
+            <a href="users" id="current">USERS</a>
+            <a href="friends">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>
         </div>
     </div>
@@ -28,7 +28,7 @@
         <div class="infoandroutes">
             <div class="info">
                 <div class="imgcontainer">
-                    <img src="../img/klaymen.png">
+                    <img src="public/img/klaymen.png">
                 </div>
                 <div class="infotext">
                     <p>Klaymen</p>
@@ -110,7 +110,7 @@
             <div class="friendscontainer">
                 <div class="friendobject">
                     <div class="friendpicture">
-                        <img src="../img/klaymen.png">
+                        <img src="public/img/klaymen.png">
                     </div>
                     <div class="friendinfo">
                         <p>Potezny Kekunio</p>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="friendobject">
                     <div class="friendpicture">
-                        <img src="../img/klaymen.png">
+                        <img src="public/img/klaymen.png">
                     </div>
                     <div class="friendinfo">
                         <p>topkek</p>
@@ -126,7 +126,7 @@
                 </div>
                 <div class="friendobject">
                     <div class="friendpicture">
-                        <img src="../img/klaymen.png">
+                        <img src="public/img/klaymen.png">
                     </div>
                     <div class="friendinfo">
                         <p>topkek</p>

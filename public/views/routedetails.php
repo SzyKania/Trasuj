@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/navbars.css">
-    <link rel="stylesheet" type="text/css" href="../css/routedetails.css">
+    <link rel="stylesheet" type="text/css" href="public/css/navbars.css">
+    <link rel="stylesheet" type="text/css" href="public/css/routedetails.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>ROUTE DETAILS</title>
 </head>
@@ -9,14 +9,14 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="../img/logo.svg">
+            <img class="sidelogo" src="public/img/logo.svg">
         </div>
         <div class="sidebuttons">
-            <a href="browse.php" id="current">BROWSE</a>
-            <a href="favourites.php">FAVOURITES</a>
+            <a href="browse" id="current">BROWSE</a>
+            <a href="favourites">FAVOURITES</a>
             <!-- <a href="#">HISTORY</a> -->
-            <a href="users.php">USERS</a>
-            <a href="friends.php">FRIENDS</a>
+            <a href="users">USERS</a>
+            <a href="friends">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>
         </div>
     </div>
@@ -44,7 +44,7 @@
                     <div class="review">
                         <div class="reviewinfo">
                             <div class="reviewerphoto">
-                                <img class="photo" src="../img/nikiel.png">
+                                <img class="photo" src="public/img/nikiel.png">
                             </div>
                             <div class="reviewdata">
                                 <div class="metadata">
@@ -67,7 +67,7 @@
                     <div class="review">
                         <div class="reviewinfo">
                             <div class="reviewerphoto">
-                                <img class="photo" src="../img/nikiel.png">
+                                <img class="photo" src="public/img/nikiel.png">
                             </div>
                             <div class="reviewdata">
                                 <div class="metadata">
@@ -90,7 +90,7 @@
                     <div class="review">
                         <div class="reviewinfo">
                             <div class="reviewerphoto">
-                                <img class="photo" src="../img/nikiel.png">
+                                <img class="photo" src="public/img/nikiel.png">
                             </div>
                             <div class="reviewdata">
                                 <div class="metadata">
@@ -113,7 +113,7 @@
                     <div class="review">
                         <div class="reviewinfo">
                             <div class="reviewerphoto">
-                                <img class="photo" src="../img/nikiel.png">
+                                <img class="photo" src="public/img/nikiel.png">
                             </div>
                             <div class="reviewdata">
                                 <div class="metadata">
@@ -136,7 +136,7 @@
                 </div>
                 <div class="gallery">
                     <div class="picture">
-                        <img src="../img/dynia.png">
+                        <img src="public/img/dynia.png">
                         <button class="arrowbutton" id="right">
                             <i class="arrow right"></i>
                         </button>

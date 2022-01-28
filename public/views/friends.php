@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/navbars.css">
-    <link rel="stylesheet" type="text/css" href="../css/friends.css">
+    <link rel="stylesheet" type="text/css" href="public/css/navbars.css">
+    <link rel="stylesheet" type="text/css" href="public/css/friends.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>ROUTE DETAILS</title>
 </head>
@@ -9,13 +9,13 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="../img/logo.svg">
+            <img class="sidelogo" src="public/img/logo.svg">
         </div>
         <div class="sidebuttons">
-            <a href="browse.php">BROWSE</a>
-            <a href="favourites.php">FAVOURITES</a>
+            <a href="browse">BROWSE</a>
+            <a href="favourites">FAVOURITES</a>
             <!-- <a href="#">HISTORY</a> -->
-            <a href="users.php">USERS</a>
+            <a href="users">USERS</a>
             <a href="#" id="current">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>
         </div>
@@ -28,7 +28,7 @@
         <div class="grid-box">
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="photo" src="../img/nikiel.png">
+                    <img class="photo" src="public/img/nikiel.png">
                 </div>
                 <div class="description-box"> 
                     <p id="name">Michal Pikiel</p>
@@ -37,7 +37,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="photo" src="../img/nikiel.png">
+                    <img class="photo" src="public/img/nikiel.png">
                 </div>
                 <div class="description-box"> 
                     <p id="name">Michal Pikiel</p>
@@ -46,7 +46,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="photo" src="../img/nikiel.png">
+                    <img class="photo" src="public/img/nikiel.png">
                 </div>
                 <div class="description-box"> 
                     <p id="name">Michal Pikiel</p>
@@ -55,7 +55,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="photo" src="../img/nikiel.png">
+                    <img class="photo" src="public/img/nikiel.png">
                 </div>
                 <div class="description-box"> 
                     <p id="name">Michal Pikiel</p>
