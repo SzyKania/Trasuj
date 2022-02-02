@@ -29,4 +29,25 @@ class RouteRepository extends Repository
         );
     }
 
+    public function addRoute(Route $route): void
+    {
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO public.routes (title, city, id_created_by, image, point_a, point_b)
+            VALUES (?, ?, ?, ?, ?, ?)
+        ');
+
+        $createdById = 2;
+        $pointA = '-87.6, 41.9';
+        $pointB = '-87.9, 42.0';
+
+        $stmt->execute([
+            $route->getTitle(),
+            $route->getCity(),
+            $createdById,
+            $route->getImage(),
+            $pointA,
+            $pointB
+        ]);
+    }
+
 }

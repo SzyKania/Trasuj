@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Route.php';
+require_once __DIR__.'/../repository/RouteRepository.php';
 
 
 class UploadController extends AppController
@@ -11,6 +12,13 @@ class UploadController extends AppController
     const UPLOAD_DIRECTORY ='/../public/uploads/';
 
     private $messages = [];
+    private $routeRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->routeRepository = new RouteRepository();
+    }
 
     public function addRoute()
     {   
@@ -23,6 +31,7 @@ class UploadController extends AppController
             );
 
             $route = new Route($_POST['title'], $_POST['city'], $_POST['roadtype'], $_FILES['file']['name']);
+            $this->routeRepository->addRoute($route);
 
             return $this->render('browse', ['messages' => $this->messages, 'route' => $route]);
         }
