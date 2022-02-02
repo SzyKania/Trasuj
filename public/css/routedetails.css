@@ -133,47 +133,10 @@
     text-align: center;
 }
 
-.picture .arrowbutton{
-    position: absolute;
-    top: 40%;
-    aspect-ratio: 1;
-    height: 10%;
-    width: auto;
-    border-radius: 25%;
-    border-color: white;
-    background: rgba(0,0,0,0.3) 
-}
-
-#right {
-    right: 1%;
-}
-
-#left {
-    left: 1%;
-}
-
-.arrow {
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 6px;
-    border-top: 10px;
-}
-
-.right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-}
-
-.left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-}
-
 .gallerybuttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center
 }
 
 .gallerybutton {

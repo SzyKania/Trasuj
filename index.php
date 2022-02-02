@@ -13,7 +13,5 @@ Routing::get('profile', 'DefaultController');
 Routing::get('routedetails', 'DefaultController');
 Routing::get('users', 'DefaultController');
 Routing::post('login', 'SecurityController');
-
-
-
+Routing::post('addRoute', 'UploadController');
 Routing::run($path);

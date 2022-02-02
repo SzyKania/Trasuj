@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/navbars.css">
-    <link rel="stylesheet" type="text/css" href="public/css/routedetails.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/routedetails.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>ROUTE DETAILS</title>
 </head>
@@ -9,7 +9,7 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="public/img/logo.svg">
+            <img class="sidelogo" src="/public/img/logo.svg">
         </div>
         <div class="sidebuttons">
             <a href="browse" id="current">BROWSE</a>
@@ -137,16 +137,9 @@
                 <div class="gallery">
                     <div class="picture">
                         <img src="public/img/dynia.png">
-                        <button class="arrowbutton" id="right">
-                            <i class="arrow right"></i>
-                        </button>
-                        <button class="arrowbutton" id="left">
-                            <i class="arrow left"></i>
-                        </button>
                         <div class="gallerybuttons">
-                        <button class="gallerybutton">ADD PHOTOS</button>
-                        <button class="gallerybutton">ADD REVIEW</button>
-                    </div>
+                            <button class="gallerybutton">ADD REVIEW</button>
+                         </div>
                     </div>
                 </div>
             </div>

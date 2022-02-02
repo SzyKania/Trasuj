@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/navbars.css">
-    <link rel="stylesheet" type="text/css" href="public/css/favourites.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/favourites.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>FAVOURITES PAGE</title>
 </head>
@@ -9,7 +9,7 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="public/img/logo.svg">
+            <img class="sidelogo" src="/public/img/logo.svg">
         </div>
         <div class="sidebuttons">
             <a href="browse">BROWSE</a>
@@ -28,7 +28,7 @@
         <div class="content-box">
             <div class="content-item">
                 <div class="shareicon">
-                    <img src="public/img/sharearrow.svg">
+                    <img src="/public/img/sharearrow.svg">
                 </div>
                 <div class="text-box" id="miasto">
                     <p>BIELSKO-BIALA</p>

@@ -32,4 +32,8 @@ class DefaultController extends AppController {
         $this->render('users');
     }
 
+    public function upload() {
+        $this->render('upload');
+    }
+
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/navbars.css">
-    <link rel="stylesheet" type="text/css" href="public/css/users.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/users.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>ROUTE DETAILS</title>
 </head>
@@ -9,7 +9,7 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="public/img/logo.svg">
+            <img class="sidelogo" src="/public/img/logo.svg">
         </div>
         <div class="sidebuttons">
             <a href="browse">BROWSE</a>

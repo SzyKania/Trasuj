@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>LOGIN PAGE</title>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <img src="public/img/logo.svg">
+            <img src="/public/img/logo.svg">
         </div>
         <div class="login-container">
             <form action="login" method="POST">
