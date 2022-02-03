@@ -13,6 +13,6 @@ Routing::get('profile', 'DefaultController');
 Routing::get('routedetails', 'DefaultController');
 Routing::get('users', 'DefaultController');
 Routing::post('login', 'SecurityController');
-Routing::post('addRoute', 'UploadController');
+Routing::post('addRoute', 'RouteController');
 Routing::post('addReview', 'ReviewController');
 Routing::run($path);

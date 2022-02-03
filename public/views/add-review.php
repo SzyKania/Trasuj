@@ -34,8 +34,9 @@
                             }
                         }
                         ?>
-                <input name="rating" type="number" min="0" max="5" step="0.5" placeholder="rating">
-                <input name="description" type="text" placeholder="description">
+                <input name="rating" class="ratinginput" type="number" min="0" max="5" step="0.5" placeholder="rating">
+                <textarea rows="10" cols="30" name="description" class="descriptioninput" type="text" placeholder="description"></textarea>
+                <br><br>
                 <button type="submit" class="sendbutton">SEND</button>
             </form>
         </section>

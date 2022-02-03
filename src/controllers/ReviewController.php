@@ -17,7 +17,7 @@ class ReviewController extends AppController
 
     public function addReview()
     {   
-        if($this->isPost() && $this->validate($_POST['description'])) {
+        if($this->isPost() && $this->validate($_POST['rating'], $_POST['description'])) {
 
             $review = new Review($_POST['rating'], time(), $_POST['description']);
             $this->reviewRepository->addReview($review);
@@ -28,8 +28,13 @@ class ReviewController extends AppController
         $this->render('add-review', ['messages' => $this->messages]);
     }
 
-    private function validate(string $description): bool
+    private function validate(string $rating, string $description): bool
     {
+        if(strlen($rating) === 0) {
+            $this->messages[] = 'Rating can\'t be empty';
+            return false;
+        }
+
         if(strlen($description) === 0) {
             $this->messages[] = 'Review can\'t be empty';
             return false;

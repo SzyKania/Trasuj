@@ -5,7 +5,7 @@ require_once __DIR__.'/../models/Route.php';
 require_once __DIR__.'/../repository/RouteRepository.php';
 
 
-class UploadController extends AppController
+class RouteController extends AppController
 {
     const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
