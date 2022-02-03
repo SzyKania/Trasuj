@@ -32,9 +32,9 @@ class SecurityController extends AppController
         }
 
 
-//        return $this->render('browse');
+//        return $this->render('routes');
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/browse");
+        header("Location: {$url}/routes");
     }
 }

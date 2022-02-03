@@ -20,6 +20,12 @@ class RouteController extends AppController
         $this->routeRepository = new RouteRepository();
     }
 
+    public function routes()
+    {
+        $routes = $this->routeRepository->getRoutes();
+        $this->render('routes', ['routes' => $routes]);
+    }
+
     public function addRoute()
     {   
         if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
@@ -32,7 +38,7 @@ class RouteController extends AppController
             $route = new Route($_POST['title'], $_POST['city'], $_POST['roadtype'], $_FILES['file']['name']);
             $this->routeRepository->addRoute($route);
 
-            return $this->render('browse', ['messages' => $this->messages, 'route' => $route]);
+            return $this->render('routes', ['messages' => $this->messages, 'route' => $route]);
         }
 
         $this->render('add-route', ['messages' => $this->messages]);

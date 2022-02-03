@@ -9,12 +9,11 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="/public/img/logo.svg">
+            <img class="sidelogo" src="/public/img/logo.svg" alt="logo">
         </div>
         <div class="sidebuttons">
-            <a href="browse">BROWSE</a>
+            <a href="routes">ROUTES</a>
             <a href="favourites">FAVOURITES</a>
-            <!-- <a href="#">HISTORY</a> -->
             <a href="#" id="current">USERS</a>
             <a href="friends">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>
@@ -28,7 +27,7 @@
         <div class="grid-box">
             <div class="grid-item" role="button" onclick="location.href='profile'">
                 <div class="picture-box">
-                    <img class="photo" src="public/img/nikiel.png">
+                    <img class="photo" src="public/img/nikiel.png" alt="userpic">
                 </div>
                 <div class="description-box"> 
                     <p id="name">Michal Pikiel</p>
@@ -37,7 +36,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="photo" src="public/img/nikiel.png">
+                    <img class="photo" src="public/img/nikiel.png" alt="userpic">
                 </div>
                 <div class="description-box"> 
                     <p id="name">Michal Pikiel</p>
@@ -46,7 +45,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="photo" src="public/img/nikiel.png">
+                    <img class="photo" src="public/img/nikiel.png" alt="userpic">
                 </div>
                 <div class="description-box"> 
                     <p id="name">Michal Pikiel</p>
@@ -55,14 +54,13 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="photo" src="public/img/nikiel.png">
+                    <img class="photo" src="public/img/nikiel.png" alt="userpic">
                 </div>
                 <div class="description-box"> 
                     <p id="name">Michal Pikiel</p>
                     <p id="city">Katowice</p> 
                 </div>
             </div>
-            
         </div>
     </div>
 </body>

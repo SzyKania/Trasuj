@@ -29,6 +29,20 @@ class RouteRepository extends Repository
         );
     }
 
+    public function getRoutes(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.routes
+        ');
+
+        $stmt->execute();
+        $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return result;
+    }
+
     public function addRoute(Route $route): void
     {
         $stmt = $this->database->connect()->prepare('

@@ -9,12 +9,11 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="/public/img/logo.svg">
+            <img class="sidelogo" src="/public/img/logo.svg" alt="logo">
         </div>
         <div class="sidebuttons">
-            <a href="browse">BROWSE</a>
+            <a href="routes">ROUTES</a>
             <a href="favourites">FAVOURITES</a>
-            <!-- <a href="#">HISTORY</a> -->
             <a href="users" id="current">USERS</a>
             <a href="friends">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/browse.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/routes.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>BROWSING PAGE</title>
 </head>
@@ -9,12 +9,11 @@
 <body>
     <div class="sidenav">
         <div class="sidelogobox">
-            <img class="sidelogo" src="/public/img/logo.svg">
+            <img class="sidelogo" src="/public/img/logo.svg" alt="logo">
         </div>
         <div class="sidebuttons">
-            <a href="#" id="current">BROWSE</a>
+            <a href="#" id="current">ROUTES</a>
             <a href="favourites">FAVOURITES</a>
-            <!-- <a href="#">HISTORY</a> -->
             <a href="users">USERS</a>
             <a href="friends">FRIENDS</a>
             <a class = "settingsbutton" href="#">SETTINGS</a>

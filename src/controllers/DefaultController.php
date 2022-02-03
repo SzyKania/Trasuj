@@ -8,8 +8,10 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function browse() {
-        $this->render('browse');
+
+
+    public function routes() {
+        $this->render('routes');
     }
 
     public function favourites() {
