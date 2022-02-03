@@ -29,7 +29,7 @@
         <div class="grid-box">
             <div class="grid-item" role="button" onclick="location.href='routedetails'">
                 <div class="picture-box">
-                    <img class="picture" src="public/uploads/<?= $route->getImage() ?>">
+                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
                 </div>
                 <div class="description-box">
                     <div class="citydata">
@@ -43,7 +43,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="picture" src="public/uploads/<?= $route->getImage() ?>">
+                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
                 </div>
                 <div class="description-box">
                     <div class="citydata">
@@ -57,7 +57,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="picture" src="public/uploads/<?= $route->getImage() ?>">
+                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
                 </div>
                 <div class="description-box">
                     <div class="citydata">
@@ -71,7 +71,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="picture" src="public/uploads/<?= $route->getImage() ?>">
+                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
                 </div>
                 <div class="description-box">
                     <div class="citydata">
@@ -85,7 +85,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="picture" src="public/uploads/<?= $route->getImage() ?>">
+                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
                 </div>
                 <div class="description-box">
                     <div class="citydata">
@@ -99,7 +99,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="picture" src="public/uploads/<?= $route->getImage() ?>">
+                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
                 </div>
                 <div class="description-box">
                     <div class="citydata">
@@ -113,7 +113,7 @@
             </div>
             <div class="grid-item">
                 <div class="picture-box">
-                    <img class="picture" src="public/uploads/<?= $route->getImage() ?>">
+                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
                 </div>
                 <div class="description-box">
                     <div class="citydata">

@@ -23,7 +23,6 @@ class UploadController extends AppController
     public function addRoute()
     {   
         if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
-            // TODO
 
             move_uploaded_file(
                 $_FILES['file']['tmp_name'],

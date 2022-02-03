@@ -3,7 +3,7 @@
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
     <link rel="stylesheet" type="text/css" href="/public/css/add-route.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <title>ROUTE DETAILS</title>
+    <title>ADD REVIEW</title>
 </head>
 
 <body>
@@ -26,18 +26,16 @@
     </div>
     <div class="main">
         <section class="formcontainer">
-            <h1>ADD NEW ROUTE</h1>
-            <form class="route-form" action="addRoute" method="POST" ENCTYPE="multipart/form-data">                
+            <h1>ADD NEW REVIEW</h1>
+            <form class="route-form" action="addReview" method="POST" ENCTYPE="multipart/form-data">
                 <?php if(isset($messages)) {
                             foreach ($messages as $message){
                                 echo $message;
                             }
                         }
                         ?>
-                <input name="title" type="text" placeholder="title">
-                <input name="city" type="text" placeholder="city">
-                <input name="roadtype" type="text" placeholder="roadtype">
-                <input type="file" name="file"/><br/>
+                <input name="rating" type="number" min="0" max="5" step="0.5" placeholder="rating">
+                <input name="description" type="text" placeholder="description">
                 <button type="submit" class="sendbutton">SEND</button>
             </form>
         </section>

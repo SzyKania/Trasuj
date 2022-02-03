@@ -3,7 +3,7 @@
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
     <link rel="stylesheet" type="text/css" href="/public/css/add-route.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <title>ROUTE DETAILS</title>
+    <title>ADD ROUTE</title>
 </head>
 
 <body>

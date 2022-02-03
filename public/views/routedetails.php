@@ -24,6 +24,7 @@
         <input  class="searchbar" name="searchbar" type="search" placeholder="BROWSE ROUTES">
         <button class="routesbutton">NEAR ROUTES</button>
     </div>
+    <button class="addbutton" onclick="location.href='addReview'">+</button>
     <div class="main">
         <div class="maincontent">
             <div class="routeinfo">
@@ -44,12 +45,12 @@
                     <div class="review">
                         <div class="reviewinfo">
                             <div class="reviewerphoto">
-                                <img class="photo" src="public/img/nikiel.png">
+                                <img class="photo" src="/public/img/nikiel.png">
                             </div>
                             <div class="reviewdata">
                                 <div class="metadata">
                                     <div class="rating">
-                                        <p>PIĘĆ GWIAZDEK!!</p>
+                                        <p> <?= $review->getRating() ?> </p>
                                     </div>
                                     <div>
                                         <p>1 MONTH AGO</p>
@@ -61,13 +62,13 @@
                             </div>
                         </div>
                         <div class="reviewtext">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p> <?= $review->getDescription() ?></p>
                         </div>
                     </div>
                     <div class="review">
                         <div class="reviewinfo">
                             <div class="reviewerphoto">
-                                <img class="photo" src="public/img/nikiel.png">
+                                <img class="photo" src="/public/img/nikiel.png">
                             </div>
                             <div class="reviewdata">
                                 <div class="metadata">
@@ -90,7 +91,7 @@
                     <div class="review">
                         <div class="reviewinfo">
                             <div class="reviewerphoto">
-                                <img class="photo" src="public/img/nikiel.png">
+                                <img class="photo" src="/public/img/nikiel.png">
                             </div>
                             <div class="reviewdata">
                                 <div class="metadata">
@@ -113,7 +114,7 @@
                     <div class="review">
                         <div class="reviewinfo">
                             <div class="reviewerphoto">
-                                <img class="photo" src="public/img/nikiel.png">
+                                <img class="photo" src="/public/img/nikiel.png">
                             </div>
                             <div class="reviewdata">
                                 <div class="metadata">
@@ -136,9 +137,9 @@
                 </div>
                 <div class="gallery">
                     <div class="picture">
-                        <img src="public/img/dynia.png">
+                        <img src="/public/img/dynia.png">
                         <div class="gallerybuttons">
-                            <button class="gallerybutton">ADD REVIEW</button>
+                            <button class="gallerybutton" onclick="location.href='addReview'">ADD REVIEW</button>
                          </div>
                     </div>
                 </div>
