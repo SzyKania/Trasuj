@@ -7,7 +7,7 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="/public/img/logo.svg">
+            <img src="/public/img/logo.svg" alt="logo">
         </div>
         <div class="login-container">
             <form action="login" method="POST">
@@ -29,6 +29,7 @@
                 <input name="password" type="password">
                 <button type="submit" class="loginbutton">LOGIN</button>
             </form>
+            <button class="loginbutton" onclick="location.href='register'">REGISTER</button>
         </div>
     </div>
 </body>

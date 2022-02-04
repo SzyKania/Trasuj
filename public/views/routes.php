@@ -26,104 +26,20 @@
     <button class="addbutton" onclick="location.href='addRoute'">+</button>
     <div class="main">
         <div class="grid-box">
-            <div class="grid-item" role="button" onclick="location.href='routedetails'">
-                <div class="picture-box">
-                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
-                </div>
-                <div class="description-box">
-                    <div class="citydata">
-                        <p><?= $route->getCity() ?></p>
-                        <p><?= $route->getRoadtype() ?></p>
-                    </div>
-                    <div class="rating">
-                        <p>le_rating</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
-                </div>
-                <div class="description-box">
-                    <div class="citydata">
-                        <p><?= $route->getCity() ?></p>
-                        <p><?= $route->getRoadtype() ?></p>
-                    </div>
-                    <div class="rating">
-                        <p>le_rating</p>
+            <?php foreach ($routes as $route): ?>
+                <div class="grid-item" role="button" onclick="location.href='routedetails'">
+                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>" alt="projectphoto">
+                    <div class="description-box">
+                        <div class="citydata">
+                            <p><?= $route->getCity() ?></p>
+                            <p><?= $route->getRoadtype() ?></p>
+                        </div>
+                        <div class="rating">
+                            <p><?= $route->getRating() ?>/5</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
-                </div>
-                <div class="description-box">
-                    <div class="citydata">
-                        <p><?= $route->getCity() ?></p>
-                        <p><?= $route->getRoadtype() ?></p>
-                    </div>
-                    <div class="rating">
-                        <p>le_rating</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
-                </div>
-                <div class="description-box">
-                    <div class="citydata">
-                        <p><?= $route->getCity() ?></p>
-                        <p><?= $route->getRoadtype() ?></p>
-                    </div>
-                    <div class="rating">
-                        <p>le_rating</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
-                </div>
-                <div class="description-box">
-                    <div class="citydata">
-                        <p><?= $route->getCity() ?></p>
-                        <p><?= $route->getRoadtype() ?></p>
-                    </div>
-                    <div class="rating">
-                        <p>le_rating</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
-                </div>
-                <div class="description-box">
-                    <div class="citydata">
-                        <p><?= $route->getCity() ?></p>
-                        <p><?= $route->getRoadtype() ?></p>
-                    </div>
-                    <div class="rating">
-                        <p>le_rating</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="picture" src="/public/uploads/<?= $route->getImage() ?>">
-                </div>
-                <div class="description-box">
-                    <div class="citydata">
-                        <p><?= $route->getCity() ?></p>
-                        <p><?= $route->getRoadtype() ?></p>
-                    </div>
-                    <div class="rating">
-                        <p>le_rating</p>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>

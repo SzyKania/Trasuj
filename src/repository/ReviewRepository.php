@@ -28,6 +28,52 @@ class ReviewRepository extends Repository
         );
     }
 
+    public function getRouteReviews(int $id_route): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.route_reviews
+            WHERE id_route = :id_route
+        ');
+
+        $stmt->bindParam(':id_route', $id_route, PDO::PARAM_INT);
+        $stmt->execute();
+        $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($reviews as $review) {
+            $result[] = new Review(
+                $review['rating'],
+                $review['created_at'],
+                $review['description']
+            );
+        }
+
+        return $result;
+    }
+
+    public function getReviews(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.route_reviews
+        ');
+
+        $stmt->execute();
+        $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($reviews as $review) {
+            $result[] = new Review(
+                $review['rating'],
+                $review['created_at'],
+                $review['description']
+            );
+        }
+
+        return $result;
+    }
+
     public function addReview(Review $review): void
     {
         $stmt = $this->database->connect()->prepare('

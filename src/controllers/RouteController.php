@@ -35,13 +35,16 @@ class RouteController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            $route = new Route($_POST['title'], $_POST['city'], $_POST['roadtype'], $_FILES['file']['name']);
+            $route = new Route($_POST['title'], $_POST['city'], $_POST['roadtype'], $_FILES['file']['name'], NULL);
             $this->routeRepository->addRoute($route);
 
-            return $this->render('routes', ['messages' => $this->messages, 'route' => $route]);
+            return $this->render('routes', [
+                'routes' => $this->routeRepository->getRoutes(),
+                'messages' => $this->message
+            ]);
         }
 
-        $this->render('add-route', ['messages' => $this->messages]);
+        return $this->render('add-route', ['messages' => $this->messages]);
     }
 
     private function validate(array $file): bool

@@ -10,9 +10,10 @@ Routing::get('favourites', 'DefaultController');
 Routing::get('friends', 'DefaultController');
 Routing::get('profile', 'DefaultController');
 Routing::get('routedetails', 'DefaultController');
-Routing::get('users', 'DefaultController');
 Routing::get('routes', 'RouteController');
+Routing::get('users', 'UserController');
 
+Routing::post('register', 'SecurityController');
 Routing::post('login', 'SecurityController');
 Routing::post('addRoute', 'RouteController');
 Routing::post('addReview', 'ReviewController');

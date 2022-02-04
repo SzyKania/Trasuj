@@ -20,18 +20,34 @@ body {
 
 .login-container {
     width: 30%;
-    height: 100%;
+    height: 40vh;
     display: flex;
+    align-self: center;
+    justify-self: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.register-container{
+    width: 30%;
+    height: 50vh;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register-container form {
+    padding-top: 5%;
 }
 
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
     width: 80%;
-    height: 30%;
+    height: 100%;
     background: #FAEBE6 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 6px #00000029;
     border-radius: 57px;
@@ -57,6 +73,7 @@ input {
     line-height: 2.5em;
     align-self: center;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 .textcontainer {
@@ -103,4 +120,11 @@ input {
         height: 7em;
         margin: 2em;
     }
+}
+
+.no-valid {
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
 }

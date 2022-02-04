@@ -25,7 +25,8 @@ class RouteRepository extends Repository
             $route['title'],
             $route['city'],
             $route['type'],
-            $route['image']
+            $route['image'],
+            $route['rating']
         );
     }
 
@@ -34,20 +35,32 @@ class RouteRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.routes
+            SELECT title, city, type, image, rating
+            FROM public.routes JOIN public.roadtypes
+            on routes.id_roadtype = roadtypes.id
         ');
 
         $stmt->execute();
-        $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $routes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return result;
+        foreach ($routes as $route) {
+            $result[] = new Route(
+                $route['title'],
+                $route['city'],
+                $route['type'],
+                $route['image'],
+                $route['rating']
+            );
+        }
+
+        return $result;
     }
 
     public function addRoute(Route $route): void
     {
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO public.routes (title, city, id_created_by, image, point_a, point_b)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO public.routes (title, city, id_created_by, image, point_a, point_b, rating)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
         ');
 
         $createdById = 2;
@@ -60,7 +73,8 @@ class RouteRepository extends Repository
             $createdById,
             $route->getImage(),
             $pointA,
-            $pointB
+            $pointB,
+            $route->getRating()
         ]);
     }
 

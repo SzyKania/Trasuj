@@ -25,42 +25,17 @@
     </div>
     <div class="main">
         <div class="grid-box">
-            <div class="grid-item" role="button" onclick="location.href='profile'">
-                <div class="picture-box">
-                    <img class="photo" src="public/img/nikiel.png" alt="userpic">
+            <?php foreach ($users as $user): ?>
+                <div class="grid-item" role="button" onclick="location.href='profile'">
+                    <div class="picture-box">
+                        <img class="photo" src="public/img/nikiel.png" alt="userpic">
+                    </div>
+                    <div class="description-box">
+                        <p id="name"><?= $user->getName()?></p>
+                        <p id="city"><?= $user->getSurname()?></p>
+                    </div>
                 </div>
-                <div class="description-box"> 
-                    <p id="name">Michal Pikiel</p>
-                    <p id="city">Katowice</p> 
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="photo" src="public/img/nikiel.png" alt="userpic">
-                </div>
-                <div class="description-box"> 
-                    <p id="name">Michal Pikiel</p>
-                    <p id="city">Katowice</p> 
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="photo" src="public/img/nikiel.png" alt="userpic">
-                </div>
-                <div class="description-box"> 
-                    <p id="name">Michal Pikiel</p>
-                    <p id="city">Katowice</p> 
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="picture-box">
-                    <img class="photo" src="public/img/nikiel.png" alt="userpic">
-                </div>
-                <div class="description-box"> 
-                    <p id="name">Michal Pikiel</p>
-                    <p id="city">Katowice</p> 
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>

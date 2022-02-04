@@ -8,8 +8,6 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-
-
     public function routes() {
         $this->render('routes');
     }
