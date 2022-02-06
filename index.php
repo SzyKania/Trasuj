@@ -8,10 +8,10 @@ $path = parse_url($path, PHP_URL_PATH);
 Routing::get('', 'DefaultController');
 Routing::get('favourites', 'DefaultController');
 Routing::get('friends', 'DefaultController');
-Routing::get('profile', 'DefaultController');
 Routing::get('routedetails', 'RouteController');
 Routing::get('routes', 'RouteController');
 Routing::get('users', 'UserController');
+Routing::get('profile', 'UserController');
 
 Routing::post('register', 'SecurityController');
 Routing::post('login', 'SecurityController');
