@@ -59,7 +59,7 @@ class RouteRepository extends Repository
     public function addRoute(Route $route): void
     {
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO public.routes (title, city, id_created_by, image, point_a, point_b, rating)
+            INSERT INTO public.routes (id_created_by, title, city, point_a, point_b, id_roadtype, image)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         ');
 
@@ -68,14 +68,30 @@ class RouteRepository extends Repository
         $pointB = '-87.9, 42.0';
 
         $stmt->execute([
+            $createdById,
             $route->getTitle(),
             $route->getCity(),
-            $createdById,
-            $route->getImage(),
             $pointA,
             $pointB,
-            $route->getRating()
+            intval($route->getRoadtype(), 10),
+            $route->getImage()
         ]);
+    }
+
+    public function getRouteByCity(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.routes 
+            JOIN public.roadtypes
+            on routes.id_roadtype = roadtypes.id
+            WHERE LOWER(city) LIKE :search OR LOWER(title) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

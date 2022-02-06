@@ -15,7 +15,7 @@ class Route
         $this->roadtype = $roadtype;
         $this->image = $image;
         if($rating === NULL) {
-            $rating = 0;
+            $rating = '0';
         }
         $this->rating = $rating;
     }

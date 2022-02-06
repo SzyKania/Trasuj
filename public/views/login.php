@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["useremail"])){
+    header("location: ../routes");
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/login.css">

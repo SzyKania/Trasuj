@@ -1,8 +1,17 @@
+<?php
+session_start();
+if(!isset($_SESSION["useremail"])){
+    header("location: ../login");
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
     <link rel="stylesheet" type="text/css" href="/public/css/routes.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="/public/js/search.js" defer></script>
     <title>BROWSING PAGE</title>
 </head>
 
@@ -43,3 +52,18 @@
         </div>
     </div>
 </body>
+
+<template id="route-template">
+    <div class="grid-item" id="">
+        <img class="picture" src="">
+        <div class="description-box">
+            <div class="citydata">
+                <p id="city"></p>
+                <p id="roadtype"></p>
+            </div>
+            <div class="rating">
+                <p id="rating"></p>
+            </div>
+        </div>
+    </div>
+</template>

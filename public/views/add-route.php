@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["useremail"])){
+    header("location: ../login");
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
@@ -35,7 +42,12 @@
                         ?>
                 <input name="title" type="text" placeholder="title">
                 <input name="city" type="text" placeholder="city">
-                <input name="roadtype" type="text" placeholder="roadtype">
+                <select name="roadtype">
+                    <option value = "1">Gravel</option>
+                    <option value = "2">Brick</option>
+                    <option value = "3">Dirt</option>
+                    <option value = "4">Asphalt</option>
+                </select>
                 <input type="file" name="file"/><br/>
                 <button type="submit" class="sendbutton">SEND</button>
             </form>
