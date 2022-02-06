@@ -9,6 +9,7 @@ if(!isset($_SESSION["userid"])){
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
     <link rel="stylesheet" type="text/css" href="/public/css/profile.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/routes.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>ROUTE DETAILS</title>
 </head>
@@ -22,8 +23,8 @@ if(!isset($_SESSION["userid"])){
             <a href="routes">ROUTES</a>
             <a href="favourites">FAVOURITES</a>
             <a href="users" id="current">USERS</a>
-            <a href="friends">FRIENDS</a>
-            <a class = "settingsbutton" href="#">SETTINGS</a>
+            <a href="profile?id=<?php $_SESSION["userid"] ?>">MY PROFILE</a>
+            <a href="#" id="logout">LOGOUT</a>
         </div>
     </div>
     <div class="topnav">
@@ -34,15 +35,18 @@ if(!isset($_SESSION["userid"])){
         <div class="infoandroutes">
             <div class="info">
                 <div class="imgcontainer">
-                    <img src="/public/img/klaymen.png">
+                    <img src="/public/img/<?= $user->getPhoto() ?>">
                 </div>
                 <div class="infotext">
-                    <p>Klaymen</p>
-                    <p>The Neverhood</p>
-                    <p>152.5 km</p>
-                    <p>21 lat</p>
+                    <p><?= $user->getName()?> <?= $user->getSurname()?> </p>
+                    <?php if($user->getId() != $_SESSION['userid']){
+                        ?>
+                    <button>FOLLOW</button>
+                    <button>UNFOLLOW</button>
+                    <?php
+                    }
+                    ?>
                 </div>
-                <div class="addfriend"></div>
             </div>
             <div class="routes">
                 <div class="routestitle">
@@ -50,17 +54,15 @@ if(!isset($_SESSION["userid"])){
                 </div>
                 <div class="routecontainer">
                     <?php foreach ($routes as $route): ?>
-                        <div class="routeobject">
-                            <div class="picture-box">
-                                1c
-                            </div>
+                        <div class="grid-item" role="button" onclick="location.href='routedetails?id=<?= $route->getId() ?>'">
+                            <img class="picture" src="/public/uploads/<?= $route->getImage() ?>" alt="projectphoto">
                             <div class="description-box">
                                 <div class="citydata">
-                                    <div>1</div>
-                                    <div>2</div>
+                                    <p><?= $route->getCity() ?></p>
+                                    <p><?= $route->getRoadtype() ?></p>
                                 </div>
                                 <div class="rating">
-                                    <p>le_rating</p>
+                                    <p><?= $route->getRating() ?>/5</p>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +73,7 @@ if(!isset($_SESSION["userid"])){
 
         <div class="friends">
             <div class="friendstitle">
-                <p>Friends<p>
+                <p>Followed<p>
             </div>
             <div class="friendscontainer">
                 <div class="friendobject">

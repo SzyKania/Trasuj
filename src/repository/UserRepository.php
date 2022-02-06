@@ -9,7 +9,7 @@ class UserRepository extends Repository
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users
-            JOIN public.users_details on users.id_user_details = users_details.id
+            JOIN public.users_details on users.id_user_details = users_details.id_details
             WHERE users.email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -35,7 +35,7 @@ class UserRepository extends Repository
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users
-            JOIN public.users_details on users.id_user_details = users_details.id
+            JOIN public.users_details on users.id_user_details = users_details.id_details
             WHERE users.id = :id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
@@ -63,7 +63,7 @@ class UserRepository extends Repository
 
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users
-            JOIN public.users_details on users.id_user_details = users_details.id
+            JOIN public.users_details on users.id_user_details = users_details.id_details
         ');
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);

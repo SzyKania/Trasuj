@@ -26,7 +26,7 @@ class UserController extends AppController
         if(is_null($_GET['id'])) {
             return $this->users();
         }
-        $user = $this->userRepository->getUser($_GET['id']);
+        $user = $this->userRepository->getUserById($_GET['id']);
         $routes = $this->routeRepository->getUserRoutes($_GET['id']);
         $this->render('profile', ['user' => $user, 'routes' => $routes]);
     }

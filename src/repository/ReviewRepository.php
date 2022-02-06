@@ -11,10 +11,10 @@ class ReviewRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT rating, rr.created_at, rr.description, ud.image, ud.name, ud.surname
+            SELECT rating, rr.created_at, rr.description, ud.image, ud.name, ud.surname, u.id
             FROM public.route_reviews rr
             JOIN users u on rr.id_user = u.id
-            JOIN users_details ud on u.id_user_details = ud.id
+            JOIN users_details ud on u.id_user_details = ud.id_details
             WHERE id_route = :id_route
         ');
 
@@ -29,7 +29,8 @@ class ReviewRepository extends Repository
                 $review['description'],
                 $review['image'],
                 $review['name'],
-                $review['surname']
+                $review['surname'],
+                $review['id']
             );
         }
 
@@ -46,9 +47,6 @@ class ReviewRepository extends Repository
                 SET rating = excluded.rating,
                     description = excluded.description
         ');
-
-        var_dump($id_user);
-        var_dump($id_route);
 
         $stmt->execute([
             $id_user,

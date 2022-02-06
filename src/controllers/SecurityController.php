@@ -44,6 +44,14 @@ class SecurityController extends AppController
         header("Location: {$url}/routes");
     }
 
+    public function logout(){
+        session_start();
+        session_unset();
+        session_destroy();
+
+        return $this->render('login', ['messages' => ["Logout successful"]]);
+    }
+
     public function register()
     {
         if (!$this->isPost()) {

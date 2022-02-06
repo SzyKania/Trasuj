@@ -13,6 +13,7 @@ Routing::get('routes', 'RouteController');
 Routing::get('users', 'UserController');
 Routing::get('profile', 'UserController');
 
+Routing::post("logout", 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('login', 'SecurityController');
 Routing::post('addRoute', 'RouteController');

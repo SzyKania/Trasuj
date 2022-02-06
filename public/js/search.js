@@ -34,26 +34,20 @@ function createRoute(route) {
 
     const clone = template.content.cloneNode(true);
 
-    const onclick = `location.href='routedetails'`;
-
-    console.log(1)
     const div = clone.querySelector(".grid-item");
     div.id = route.id;
+    const onclick = `location.href='routedetails?id=${route.id_routes}'`;
     div.setAttribute('onclick', onclick);
 
-    console.log(2)
     const image = clone.querySelector("img");
     image.src = `/public/uploads/${route.image}`;
 
-    console.log(3)
     const city = clone.querySelector("p[id=\"city\"]");
     city.innerHTML = route.city;
 
-    console.log(4)
     const roadtype = clone.querySelector("p[id=\"roadtype\"]");
     roadtype.innerHTML = route.type;
 
-    console.log(5)
     const rating = clone.querySelector("p[id=\"rating\"]");
     rating.innerHTML = route.rating;
 

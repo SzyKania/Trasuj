@@ -25,7 +25,7 @@ class ReviewController extends AppController
             $id_user = $_SESSION["userid"];
 
             //TODO fix this
-            $review = new Review($_POST['rating'], time(), $_POST['description'], NULL, NULL, NULL);
+            $review = new Review($_POST['rating'], time(), $_POST['description'], NULL, NULL, NULL, NULL);
             $this->reviewRepository->addReview($review, $_GET['id'], $id_user);
 
             return $this->render('routedetails',

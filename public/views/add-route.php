@@ -10,6 +10,8 @@ if(!isset($_SESSION["userid"])){
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
     <link rel="stylesheet" type="text/css" href="/public/css/add-route.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" defer src="/public/js/logout.js"></script>
+
     <title>ADD ROUTE</title>
 </head>
 
@@ -22,8 +24,8 @@ if(!isset($_SESSION["userid"])){
             <a href="routes">ROUTES</a>
             <a href="favourites">FAVOURITES</a>
             <a href="users">USERS</a>
-            <a href="friends">FRIENDS</a>
-            <a class = "settingsbutton" href="#">SETTINGS</a>
+            <a href="profile?id=<?= $_SESSION["userid"] ?>">MY PROFILE</a>
+            <a href="#" id="logout">LOGOUT</a>
         </div>
     </div>
     <div class="topnav">
