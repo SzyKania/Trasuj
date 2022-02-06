@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["useremail"])){
+if(!isset($_SESSION["userid"])){
     header("location: ../login");
 }
 ?>
@@ -33,7 +33,7 @@ if(!isset($_SESSION["useremail"])){
     <div class="main">
         <section class="formcontainer">
             <h1>ADD NEW REVIEW</h1>
-            <form class="route-form" action="addReview" method="POST" ENCTYPE="multipart/form-data">
+            <form class="route-form" action="addReview?id=<?=$_GET['id']?>" method="POST" ENCTYPE="multipart/form-data">
                 <?php if(isset($messages)) {
                             foreach ($messages as $message){
                                 echo $message;

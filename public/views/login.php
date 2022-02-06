@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["useremail"])){
+if(isset($_SESSION["userid"])){
     header("location: ../routes");
 }
 ?>

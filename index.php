@@ -9,7 +9,7 @@ Routing::get('', 'DefaultController');
 Routing::get('favourites', 'DefaultController');
 Routing::get('friends', 'DefaultController');
 Routing::get('profile', 'DefaultController');
-Routing::get('routedetails', 'DefaultController');
+Routing::get('routedetails', 'RouteController');
 Routing::get('routes', 'RouteController');
 Routing::get('users', 'UserController');
 

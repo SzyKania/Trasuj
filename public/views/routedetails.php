@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["useremail"])){
+if(!isset($_SESSION["userid"])){
     header("location: ../login");
 }
 ?>
@@ -30,17 +30,16 @@ if(!isset($_SESSION["useremail"])){
         <input  class="searchbar" name="searchbar" type="search" placeholder="BROWSE ROUTES">
         <button class="routesbutton">NEAR ROUTES</button>
     </div>
-    <button class="addbutton" onclick="location.href='addReview'">+</button>
     <div class="main">
         <div class="maincontent">
             <div class="routeinfo">
                 <div class="routename">
-                    <p>Trasa na Szyndzielni</p>
-                    <p>BIELSKO-BIALA</p>
+                    <p><?=$route->getTitle()?></p>
+                    <p><?=$route->getCity()?></p>
                 </div>
                 <div class="routedata">
-                    <p>Road type: Gravel</p>
-                    <p>Users' rating: </p>
+                    <p><?=$route->getRoadtype()?></p>
+                    <p>Users' rating: <?=$route->getRating()?></p>
                 </div>
                 <div>
                     <button class="mapbutton">View on map</button>
@@ -48,104 +47,37 @@ if(!isset($_SESSION["useremail"])){
             </div>
             <div class="reviewsandgallery">
                 <div class="reviews">
-                    <div class="review">
-                        <div class="reviewinfo">
-                            <div class="reviewerphoto">
-                                <img class="photo" src="/public/img/nikiel.png">
-                            </div>
-                            <div class="reviewdata">
-                                <div class="metadata">
-                                    <div class="rating">
-                                        <p> <?= $review->getRating() ?> </p>
-                                    </div>
-                                    <div>
-                                        <p>1 MONTH AGO</p>
-                                    </div>
+                    <?php foreach ($reviews as $review): ?>
+                        <div class="review">
+                            <div class="reviewinfo">
+                                <div class="reviewerphoto">
+                                    <img class="photo" src="/public/img/<?= $review->getAuthorPhoto() ?>">
                                 </div>
-                                <div class="reviewername">
-                                    <p>MICHAL CO SIE SKICHAL</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reviewtext">
-                            <p> <?= $review->getDescription() ?></p>
-                        </div>
-                    </div>
-                    <div class="review">
-                        <div class="reviewinfo">
-                            <div class="reviewerphoto">
-                                <img class="photo" src="/public/img/nikiel.png">
-                            </div>
-                            <div class="reviewdata">
-                                <div class="metadata">
-                                    <div class="rating">
-                                        <p>PIEC GWIAZDEK!!</p>
+                                <div class="reviewdata">
+                                    <div class="metadata">
+                                        <div class="rating">
+                                            <p> <?= $review->getRating() ?> </p>
+                                        </div>
+                                        <div>
+                                            <p> <?= date('Y-m-d', strtotime($review->getCreatedAt())) ?> </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p>1 MONTH AGO</p>
+                                    <div class="reviewername">
+                                        <p><?= $review->getAuthorName() ?> <?= $review->getAuthorSurname() ?> </p>
                                     </div>
                                 </div>
-                                <div class="reviewername">
-                                    <p>MICHAL CO SIE SKICHAL</p>
-                                </div>
+                            </div>
+                            <div class="reviewtext">
+                                <p> <?= $review->getDescription() ?></p>
                             </div>
                         </div>
-                        <div class="reviewtext">
-                            <p>Lorem</p>
-                        </div>
-                    </div>
-                    <div class="review">
-                        <div class="reviewinfo">
-                            <div class="reviewerphoto">
-                                <img class="photo" src="/public/img/nikiel.png">
-                            </div>
-                            <div class="reviewdata">
-                                <div class="metadata">
-                                    <div class="rating">
-                                        <p>PIEC GWIAZDEK!!</p>
-                                    </div>
-                                    <div>
-                                        <p>1 MONTH AGO</p>
-                                    </div>
-                                </div>
-                                <div class="reviewername">
-                                    <p>MICHAL CO SIE SKICHAL</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reviewtext">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                    </div>
-                    <div class="review">
-                        <div class="reviewinfo">
-                            <div class="reviewerphoto">
-                                <img class="photo" src="/public/img/nikiel.png">
-                            </div>
-                            <div class="reviewdata">
-                                <div class="metadata">
-                                    <div class="rating">
-                                        <p>PIEC GWIAZDEK!!</p>
-                                    </div>
-                                    <div>
-                                        <p>1 MONTH AGO</p>
-                                    </div>
-                                </div>
-                                <div class="reviewername">
-                                    <p>MICHAL CO SIE SKICHAL</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reviewtext">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="gallery">
                     <div class="picture">
-                        <img src="/public/img/dynia.png">
+                        <img src="/public/uploads/<?= $route->getImage() ?>">
                         <div class="gallerybuttons">
-                            <button class="gallerybutton" onclick="location.href='addReview'">ADD REVIEW</button>
+                            <button class="gallerybutton" onclick="location.href='addReview?id=<?=$route->getId()?>'">ADD REVIEW</button>
                          </div>
                     </div>
                 </div>

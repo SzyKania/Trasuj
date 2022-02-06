@@ -7,8 +7,9 @@ class Route
     private $roadtype;
     private $image;
     private $rating;
+    private $id;
 
-    public function __construct($title, $city, $roadtype, $image, $rating)
+    public function __construct($title, $city, $roadtype, $image, $rating, $id)
     {
         $this->title = $title;
         $this->city = $city;
@@ -18,6 +19,7 @@ class Route
             $rating = '0';
         }
         $this->rating = $rating;
+        $this->id = $id;
     }
 
     public function getTitle()
@@ -68,6 +70,16 @@ class Route
     public function setRating($rating): void
     {
         $this->rating = $rating;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 
 }

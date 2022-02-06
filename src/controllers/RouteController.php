@@ -13,17 +13,29 @@ class RouteController extends AppController
 
     private $messages = [];
     private $routeRepository;
+    private $reviewRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->routeRepository = new RouteRepository();
+        $this->reviewRepository = new ReviewRepository();
     }
 
     public function routes()
     {
         $routes = $this->routeRepository->getRoutes();
         $this->render('routes', ['routes' => $routes]);
+    }
+
+    public function routedetails()
+    {
+        if(is_null($_GET['id'])) {
+            return $this->routes();
+        }
+        $route = $this->routeRepository->getRoute($_GET['id']);
+        $reviews = $this->reviewRepository->getRouteReviews($_GET['id']);
+        $this->render('routedetails', ['route' => $route, 'reviews' => $reviews]);
     }
 
     public function addRoute()

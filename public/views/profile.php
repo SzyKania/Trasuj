@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["useremail"])){
+if(!isset($_SESSION["userid"])){
     header("location: ../login");
 }
 ?>
@@ -49,62 +49,22 @@ if(!isset($_SESSION["useremail"])){
                     <p>Trasy</p>
                 </div>
                 <div class="routecontainer">
-                    <div class="routeobject">
-                        <div class="picture-box"> 
-                            1c
-                        </div>
-                        <div class="description-box">
-                            <div class="citydata">
-                                <div>1</div>
-                                <div>2</div>
+                    <?php foreach ($routes as $route): ?>
+                        <div class="routeobject">
+                            <div class="picture-box">
+                                1c
                             </div>
-                            <div class="rating">
-                                <p>le_rating</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="routeobject">
-                        <div class="picture-box"> 
-                            1c
-                        </div>
-                        <div class="description-box">
-                            <div class="citydata">
-                                <div>1</div>
-                                <div>2</div>
-                            </div>
-                            <div class="rating">
-                                <p>le_rating</p>
+                            <div class="description-box">
+                                <div class="citydata">
+                                    <div>1</div>
+                                    <div>2</div>
+                                </div>
+                                <div class="rating">
+                                    <p>le_rating</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="routeobject">
-                        <div class="picture-box"> 
-                            1c
-                        </div>
-                        <div class="description-box">
-                            <div class="citydata">
-                                <div>1</div>
-                                <div>2</div>
-                            </div>
-                            <div class="rating">
-                                <p>le_rating</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="routeobject">
-                        <div class="picture-box"> 
-                            1c
-                        </div>
-                        <div class="description-box">
-                            <div class="citydata">
-                                <div>1</div>
-                                <div>2</div>
-                            </div>
-                            <div class="rating">
-                                <p>le_rating</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

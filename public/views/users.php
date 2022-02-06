@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["useremail"])){
+if(!isset($_SESSION["userid"])){
     header("location: ../login");
 }
 ?>
@@ -35,7 +35,7 @@ if(!isset($_SESSION["useremail"])){
             <?php foreach ($users as $user): ?>
                 <div class="grid-item" role="button" onclick="location.href='profile'">
                     <div class="picture-box">
-                        <img class="photo" src="public/img/nikiel.png" alt="userpic">
+                        <img class="photo" src="public/img/<?= $user->getPhoto()?>" alt="userpic">
                     </div>
                     <div class="description-box">
                         <p id="name"><?= $user->getName()?></p>

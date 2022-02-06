@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["useremail"])){
+if(!isset($_SESSION["userid"])){
     header("location: ../login");
 }
 ?>
@@ -36,7 +36,7 @@ if(!isset($_SESSION["useremail"])){
     <div class="main">
         <div class="grid-box">
             <?php foreach ($routes as $route): ?>
-                <div class="grid-item" role="button" onclick="location.href='routedetails'">
+                <div class="grid-item" role="button" onclick="location.href='routedetails?id=<?= $route->getId() ?>'">
                     <img class="picture" src="/public/uploads/<?= $route->getImage() ?>" alt="projectphoto">
                     <div class="description-box">
                         <div class="citydata">

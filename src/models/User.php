@@ -6,55 +6,68 @@ class User
     private $password;
     private $name;
     private $surname;
+    private $id;
     private $phone;
+    private $photo;
 
-    public function __construct(string $email, string $password, string $name, string $surname)
+    public function __construct($email, $password, $name, $surname, $id, $photo)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
-        $this->phone = NULL;
+        $this->id = $id;
+        $this->photo = $photo;
     }
 
-    public function getEmail(): string
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setEmail(string $email)
+    public function setEmail($email): void
     {
         $this->email = $email;
     }
 
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function setPassword(string $password)
+    public function setPassword($password): void
     {
         $this->password = $password;
     }
 
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setName(string $name)
+    public function setName($name): void
     {
         $this->name = $name;
     }
 
-    public function getSurname(): string
+    public function getSurname()
     {
         return $this->surname;
     }
 
-    public function setSurname(string $surname)
+    public function setSurname($surname): void
     {
         $this->surname = $surname;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 
     public function getPhone()
@@ -66,5 +79,17 @@ class User
     {
         $this->phone = $phone;
     }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto($photo): void
+    {
+        $this->photo = $photo;
+    }
+
+
 
 }

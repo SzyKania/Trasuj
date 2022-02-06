@@ -8,21 +8,30 @@ class ReviewController extends AppController
 {
     private $messages = [];
     private $reviewRepository;
+    private $routeRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->reviewRepository = new ReviewRepository();
+        $this->routeRepository = new RouteRepository();
     }
 
     public function addReview()
     {   
         if($this->isPost() && $this->validate($_POST['rating'], $_POST['description'])) {
 
-            $review = new Review($_POST['rating'], time(), $_POST['description']);
-            $this->reviewRepository->addReview($review);
+            session_start();
+            $id_user = $_SESSION["userid"];
 
-            return $this->render('routedetails', ['messages' => $this->messages, 'review' => $review]);
+            //TODO fix this
+            $review = new Review($_POST['rating'], time(), $_POST['description'], NULL, NULL, NULL);
+            $this->reviewRepository->addReview($review, $_GET['id'], $id_user);
+
+            return $this->render('routedetails',
+                ['messages' => $this->messages,
+                    'reviews' => $this->reviewRepository->getRouteReviews($_GET['id']),
+                    'route' => $this->routeRepository->getRoute($_GET['id'])]);
         }
 
         $this->render('add-review', ['messages' => $this->messages]);

@@ -5,35 +5,16 @@ require_once __DIR__.'/../models/Review.php';
 
 class ReviewRepository extends Repository
 {
-    public function getReview(int $id_user, int $id_route): ?Review
-    {
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.route_reviews
-            WHERE id_user = :id_user AND id_route = :id_route
-        ');
-        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
-        $stmt->bindParam(':id_route', $id_route, PDO::PARAM_INT);
-        $stmt->execute();
-
-        $review = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($review == false) {
-            return null;
-        }
-
-        return new Review(
-            $review['rating'],
-            $review['created_at'],
-            $review['description']
-        );
-    }
 
     public function getRouteReviews(int $id_route): array
     {
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.route_reviews
+            SELECT rating, rr.created_at, rr.description, ud.image, ud.name, ud.surname
+            FROM public.route_reviews rr
+            JOIN users u on rr.id_user = u.id
+            JOIN users_details ud on u.id_user_details = ud.id
             WHERE id_route = :id_route
         ');
 
@@ -45,36 +26,18 @@ class ReviewRepository extends Repository
             $result[] = new Review(
                 $review['rating'],
                 $review['created_at'],
-                $review['description']
+                $review['description'],
+                $review['image'],
+                $review['name'],
+                $review['surname']
             );
         }
 
         return $result;
     }
 
-    public function getReviews(): array
-    {
-        $result = [];
 
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.route_reviews
-        ');
-
-        $stmt->execute();
-        $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($reviews as $review) {
-            $result[] = new Review(
-                $review['rating'],
-                $review['created_at'],
-                $review['description']
-            );
-        }
-
-        return $result;
-    }
-
-    public function addReview(Review $review): void
+    public function addReview(Review $review, $id_route, $id_user): void
     {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO public.route_reviews (id_user, id_route, rating, description)
@@ -84,8 +47,8 @@ class ReviewRepository extends Repository
                     description = excluded.description
         ');
 
-        $id_user = 2;
-        $id_route = 2;
+        var_dump($id_user);
+        var_dump($id_route);
 
         $stmt->execute([
             $id_user,

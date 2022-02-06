@@ -10,7 +10,7 @@ class RouteRepository extends Repository
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.routes
             JOIN public.roadtypes on routes.id_roadtype = roadtypes.id
-            WHERE routes.id = :id
+            WHERE id_routes = :id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -26,7 +26,8 @@ class RouteRepository extends Repository
             $route['city'],
             $route['type'],
             $route['image'],
-            $route['rating']
+            $route['rating'],
+            $route['id_routes']
         );
     }
 
@@ -35,7 +36,7 @@ class RouteRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT title, city, type, image, rating
+            SELECT title, city, type, image, rating, id_routes
             FROM public.routes JOIN public.roadtypes
             on routes.id_roadtype = roadtypes.id
         ');
@@ -49,7 +50,8 @@ class RouteRepository extends Repository
                 $route['city'],
                 $route['type'],
                 $route['image'],
-                $route['rating']
+                $route['rating'],
+                $route['id_routes']
             );
         }
 
@@ -63,7 +65,9 @@ class RouteRepository extends Repository
             VALUES (?, ?, ?, ?, ?, ?, ?)
         ');
 
-        $createdById = 2;
+        session_start();
+        $createdById = $_SESSION["userid"];
+
         $pointA = '-87.6, 41.9';
         $pointB = '-87.9, 42.0';
 

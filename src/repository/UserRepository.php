@@ -25,7 +25,9 @@ class UserRepository extends Repository
             $user['email'],
             $user['password'],
             $user['name'],
-            $user['surname']
+            $user['surname'],
+            $user['id'],
+            $user['image']
         );
     }
 
@@ -45,7 +47,9 @@ class UserRepository extends Repository
                 $user['email'],
                 $user['password'],
                 $user['name'],
-                $user['surname']
+                $user['surname'],
+                $user['id'],
+                $user['image']
             );
         }
 
