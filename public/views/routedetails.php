@@ -1,36 +1,7 @@
 <?php
-session_start();
-if(!isset($_SESSION["userid"])){
-    header("location: ../login");
-}
+$pagename = "routedetails";
+include(__DIR__.'/../include/siteheader.php');
 ?>
-
-<!DOCTYPE html>
-<head>
-    <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/routedetails.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="/public/js/logout.js" defer></script>
-    <script type="text/javascript" src="/public/js/favourite.js" defer></script>
-    <title>ROUTE DETAILS</title>
-</head>
-
-<body>
-    <div class="sidenav">
-        <div class="sidelogobox">
-            <img class="sidelogo" src="/public/img/logo.svg" alt="logo">
-        </div>
-        <div class="sidebuttons">
-            <a href="routes" id="current">ROUTES</a>
-            <a href="favourites">FAVOURITES</a>
-            <a href="users">USERS</a>
-            <a href="profile?id=<?= $_SESSION["userid"] ?>">MY PROFILE</a>
-            <a href="#" id="logout">LOGOUT</a>
-        </div>
-    </div>
-    <div class="topnav">
-        <input  class="searchbar" name="searchbar" type="search" placeholder="BROWSE ROUTES">
-    </div>
     <div class="main">
         <div class="maincontent">
             <div class="routeinfo">
@@ -85,7 +56,5 @@ if(!isset($_SESSION["userid"])){
                 </div>
             </div>
         </div>
-        
     </div>
-
 </body>

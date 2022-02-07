@@ -1,0 +1,50 @@
+.main {
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.formcontainer {
+    margin-top: 5%;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.formcontainer h1 {
+    margin-bottom: 10%;
+}
+
+.route-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5%;
+}
+
+.route-form > * {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+.sendbutton {
+    width: 20%;
+    background: transparent linear-gradient(136deg, #70FF70 0%, #FF4040 100%);
+    border-radius: 10px;
+}
+
+.descriptioninput {
+    width: 100%;
+}
+
+.ratinginput {
+    width: 20%;
+    height: 5%;
+}
