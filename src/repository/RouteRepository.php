@@ -126,4 +126,33 @@ class RouteRepository extends Repository
         return $result;
     }
 
+    public function getUserFavourites(int $id): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.users_favourites
+            JOIN public.routes on users_favourites.route_id = routes.id_routes
+            JOIN public.roadtypes on routes.id_roadtype = roadtypes.id
+            WHERE user_id = :id
+        ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $routes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($routes as $route) {
+            $result[] = new Route(
+                $route['title'],
+                $route['city'],
+                $route['type'],
+                $route['image'],
+                $route['rating'],
+                $route['id_routes']
+            );
+        }
+
+        return $result;
+    }
+
 }

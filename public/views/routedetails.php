@@ -11,6 +11,7 @@ if(!isset($_SESSION["userid"])){
     <link rel="stylesheet" type="text/css" href="/public/css/routedetails.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/public/js/logout.js" defer></script>
+    <script type="text/javascript" src="/public/js/favourite.js" defer></script>
     <title>ROUTE DETAILS</title>
 </head>
 
@@ -42,7 +43,8 @@ if(!isset($_SESSION["userid"])){
                     <p>Users' rating: <?=$route->getRating()?></p>
                 </div>
                 <div>
-<!--                    <button class="mapbutton">View on map</button>-->
+                    <button class="mapbutton favourite" id="<?= $route->getId() ?>">FAVOURITE</button>
+                    <button class="mapbutton unfavourite" id="<?= $route->getId() ?>">UNFAVOURITE</button>
                 </div>
             </div>
             <div class="reviewsandgallery">
@@ -56,7 +58,7 @@ if(!isset($_SESSION["userid"])){
                                 <div class="reviewdata">
                                     <div class="metadata">
                                         <div class="rating">
-                                            <p> <?= $review->getRating() ?> </p>
+                                            <p> <?= $review->getRating() ?>   </p>
                                         </div>
                                         <div>
                                             <p> <?= date('Y-m-d', strtotime($review->getCreatedAt())) ?> </p>

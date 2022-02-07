@@ -33,6 +33,13 @@ class UserController extends AppController
         $this->render('profile', ['user' => $user, 'routes' => $routes, 'follows' => $follows]);
     }
 
+    public function favourites()
+    {
+        session_start();
+        $routes = $this->routeRepository->getUserFavourites($_SESSION["userid"]);
+        $this->render('favourites', ['routes' => $routes]);
+    }
+
     public function follow()
     {
         session_start();
@@ -46,6 +53,22 @@ class UserController extends AppController
         session_start();
         if($this->isPost()){
             $this->userRepository->unfollowUser($_SESSION["userid"], $_POST['id']);
+        }
+    }
+
+    public function favourite()
+    {
+        session_start();
+        if($this->isPost()){
+            $this->userRepository->favouriteRoute($_SESSION["userid"], $_POST['id']);
+        }
+    }
+
+    public function unfavourite()
+    {
+        session_start();
+        if($this->isPost()){
+            $this->userRepository->unfavouriteRoute($_SESSION["userid"], $_POST['id']);
         }
     }
 

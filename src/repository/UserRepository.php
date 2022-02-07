@@ -111,6 +111,8 @@ class UserRepository extends Repository
         return $result;
     }
 
+
+
     public function addUser(User $user)
     {
         $stmt = $this->database->connect()->prepare('
@@ -163,6 +165,32 @@ class UserRepository extends Repository
         ]);
     }
 
+    public function favouriteRoute($userId, $routeId)
+    {
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO users_favourites (user_id, route_id) 
+            VALUES (?, ?)
+            ON CONFLICT DO NOTHING
+        ');
+
+        $stmt->execute([
+            $userId,
+            $routeId
+        ]);
+    }
+
+    public function unfavouriteRoute($userId, $routeId)
+    {
+        $stmt = $this->database->connect()->prepare('
+            DELETE FROM users_favourites 
+            WHERE user_id = :user_id AND route_id = :route_id
+        ');
+
+        $stmt->execute([
+            $userId,
+            $routeId
+        ]);
+    }
 
     public function getUserDetailsId(User $user): int
     {

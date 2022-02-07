@@ -34,11 +34,10 @@ if(!isset($_SESSION["userid"])){
         <div class="content-box">
             <?php if (!empty($routes)) {
                 foreach ($routes as $route): ?>
-                    <div class="content-item">
+                    <div class="content-item" role="button" onclick="location.href='routedetails?id=<?= $route->getId() ?>'">
                         <div class="text-box" id="miasto">
                             <p><?=$route->getCity()?></p>
-                            <p>Road type:<?=$route->getRoadtype()?></p>
-                            <p>Last visit:</p>
+                            <p>Road type: <?=$route->getRoadtype()?></p>
                         </div>
                         <div class="text-box">
                             <p><?=$route->getTitle()?></p>
@@ -49,22 +48,6 @@ if(!isset($_SESSION["userid"])){
                     </div>
                 <?php endforeach;
             } ?>
-<!--example, not finished-->
-            <div class="content-item">
-                <div class="text-box" id="miasto">
-                    <p>BIELSKO-BIALA</p>
-                    <p>Road type:</p>
-                    <p>Last visit:</p>
-                </div>
-                <div class="text-box">
-                    <p>Trasa na Szyndzielni</p>
-                    <p>Best time:</p>
-                    <p>Often with:</p>
-                </div>
-                <div class="picture-box">
-                    <img class="picture" src="/public/uploads/przypinka1.png" alt="projectphoto">
-                </div>
-            </div>
         </div>
     </div>
 </body>
