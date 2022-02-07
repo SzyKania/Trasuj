@@ -24,7 +24,6 @@ search.addEventListener("keyup", function (event) {
 
 function loadRoutes(routes) {
     routes.forEach(route => {
-        console.log(route);
         createRoute(route);
     });
 }
