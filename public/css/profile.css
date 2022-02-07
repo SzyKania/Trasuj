@@ -65,31 +65,77 @@
 .routecontainer {
     width: 100%;
     height: 70%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10%;
     flex-wrap: wrap;
     justify-content: space-around;
     overflow-y: scroll;
 }
 
-.routeobject {
+.grid-item {
     font-size: 30px;
-    height: 38vh;
-    width: 30vh;
-    box-shadow: 4px 4px 15px rgb(202, 202, 202);
-    margin-bottom: 7%;
+    height: 45vh;
+    width: auto;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
+    box-shadow: 4px 4px 15px rgb(202, 202, 202);
 }
 
+.grid-item p {
+    font-family: 'Montserrat', sans-serif;
+}
 
-.picture-box {
+.picture {
     aspect-ratio: 1;
-    background-color: #ebebeb;
-    width: 100%;
     height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.description-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    height: 100%;
+    align-items: stretch;
     box-sizing: border-box;
+    background: linear-gradient(136deg, #70FF70 0%, #FF4040 100%);
+}
+
+.description-box > div {
+    box-sizing: border-box;
+    flex: 1;
+    text-align: center;
+}
+
+.description-box > .citydata{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.citydata > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 1;
+    margin: 0;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rating > p {
+    vertical-align: middle;
 }
 
 .description-box {
@@ -132,7 +178,10 @@
 }
 
 .friendscontainer {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    row-gap: 5vh;
 }
 
 .friendstitle p {
@@ -144,10 +193,20 @@
 .friendobject {
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
+    height: 15vh;
     display: flex;
+    border: solid #d4d4d4;
+    border-radius: 10px;
     flex-direction: row;
     justify-content: space-evenly;
 } 
+
+.friendobject img {
+    aspect-ratio: 1;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
 
 .friendinfo {
     display: flex;

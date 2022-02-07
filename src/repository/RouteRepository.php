@@ -104,6 +104,8 @@ class RouteRepository extends Repository
 
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.routes
+            JOIN public.roadtypes
+            on routes.id_roadtype = roadtypes.id
             WHERE id_created_by = :id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);

@@ -47,7 +47,7 @@ class RouteController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            $route = new Route($_POST['title'], $_POST['city'], $_POST['roadtype'], $_FILES['file']['name'], NULL);
+            $route = new Route($_POST['title'], $_POST['city'], $_POST['roadtype'], $_FILES['file']['name'], NULL, NULL);
             $this->routeRepository->addRoute($route);
 
             return $this->render('routes', [

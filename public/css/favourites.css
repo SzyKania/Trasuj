@@ -13,7 +13,7 @@
 .content-item {
     background-color: white;
     display: flex;
-    min-height: 30vh;
+    height: 30vh;
     justify-content: flex-end;
     flex-direction: row;
     font-size: 30px;
@@ -26,6 +26,13 @@
     height: 100%;
     width: auto;
     box-sizing: border-box;
+}
+
+.picture-box img {
+    aspect-ratio: 1;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
 }
 
 .text-box {

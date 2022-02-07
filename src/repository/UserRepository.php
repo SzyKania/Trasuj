@@ -82,6 +82,35 @@ class UserRepository extends Repository
         return $result;
     }
 
+    public function getFollowed($id): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.users_followed uf
+            JOIN public.users u on uf.id_followed = u.id
+            JOIN public.users_details ud on ud.id_details = u.id_user_details
+            WHERE id_following = :id
+        ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($users as $user) {
+            $result[] = new User(
+                $user['email'],
+                $user['password'],
+                $user['name'],
+                $user['surname'],
+                $user['id'],
+                $user['image']
+            );
+        }
+
+        return $result;
+    }
+
     public function addUser(User $user)
     {
         $stmt = $this->database->connect()->prepare('
@@ -106,6 +135,34 @@ class UserRepository extends Repository
             $this->getUserDetailsId($user)
         ]);
     }
+
+    public function followUser($idFollower, $idFollowed)
+    {
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO users_followed (id_following, id_followed) 
+            VALUES (?, ?)
+            ON CONFLICT DO NOTHING
+        ');
+
+        $stmt->execute([
+            $idFollower,
+            $idFollowed
+        ]);
+    }
+
+    public function unfollowUser($idFollower, $idFollowed)
+    {
+        $stmt = $this->database->connect()->prepare('
+            DELETE FROM users_followed 
+            WHERE id_following = :id_following AND id_followed = :id_followed
+        ');
+
+        $stmt->execute([
+            $idFollower,
+            $idFollowed
+        ]);
+    }
+
 
     public function getUserDetailsId(User $user): int
     {

@@ -10,7 +10,7 @@ if(!isset($_SESSION["userid"])){
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
     <link rel="stylesheet" type="text/css" href="/public/css/add-route.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <script type="text/javascript" defer src="/public/js/logout.js"></script>
+    <script type="text/javascript" src="/public/js/logout.js" defer></script>
 
     <title>ADD REVIEW</title>
 </head>
@@ -30,7 +30,6 @@ if(!isset($_SESSION["userid"])){
     </div>
     <div class="topnav">
         <input  class="searchbar" name="searchbar" type="search" placeholder="BROWSE ROUTES">
-        <button class="routesbutton">NEAR ROUTES</button>
     </div>
     <div class="main">
         <section class="formcontainer">

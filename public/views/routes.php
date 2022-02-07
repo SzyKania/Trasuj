@@ -10,7 +10,7 @@ if(!isset($_SESSION["userid"])){
     <link rel="stylesheet" type="text/css" href="/public/css/navbars.css">
     <link rel="stylesheet" type="text/css" href="/public/css/routes.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <script type="text/javascript" defer src="/public/js/logout.js"></script>
+    <script type="text/javascript" src="/public/js/logout.js" defer></script>
     <script type="text/javascript" src="/public/js/search.js" defer></script>
     <title>BROWSING PAGE</title>
 </head>
@@ -24,13 +24,12 @@ if(!isset($_SESSION["userid"])){
             <a href="#" id="current">ROUTES</a>
             <a href="favourites">FAVOURITES</a>
             <a href="users">USERS</a>
-            <a href="profile?id=<?= $_SESSION["userid"] ?>">MY PROFILE</a>
+            <a href='profile?id=<?= $_SESSION["userid"] ?>'>MY PROFILE</a>
             <a href="#" id="logout">LOGOUT</a>
         </div>
     </div>
     <div class="topnav">
         <input  class="searchbar" name="searchbar" type="search" placeholder="BROWSE ROUTES">
-        <button class="routesbutton">NEAR ROUTES</button>
     </div>
     <button class="addbutton" onclick="location.href='addRoute'">+</button>
     <div class="main">

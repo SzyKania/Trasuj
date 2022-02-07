@@ -27,8 +27,26 @@ class UserController extends AppController
             return $this->users();
         }
         $user = $this->userRepository->getUserById($_GET['id']);
+        $follows = $this->userRepository->getFollowed($_GET['id']);
         $routes = $this->routeRepository->getUserRoutes($_GET['id']);
-        $this->render('profile', ['user' => $user, 'routes' => $routes]);
+
+        $this->render('profile', ['user' => $user, 'routes' => $routes, 'follows' => $follows]);
+    }
+
+    public function follow()
+    {
+        session_start();
+        if($this->isPost()){
+            $this->userRepository->followUser($_SESSION["userid"], $_POST['id']);
+        }
+    }
+
+    public function unfollow()
+    {
+        session_start();
+        if($this->isPost()){
+            $this->userRepository->unfollowUser($_SESSION["userid"], $_POST['id']);
+        }
     }
 
 }

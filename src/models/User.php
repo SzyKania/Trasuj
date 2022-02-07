@@ -17,7 +17,12 @@ class User
         $this->name = $name;
         $this->surname = $surname;
         $this->id = $id;
-        $this->photo = $photo;
+        if(is_null($photo)){
+            $this->photo = 'default.png';
+        }
+        else{
+            $this->photo = $photo;
+        }
     }
 
     public function getEmail()
